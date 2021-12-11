@@ -14,7 +14,6 @@
 	<name>pet_ms</name>
 	<description>Microservice Pet</description>
 	<properties>
-		<disable.checks>false</disable.checks>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -32,17 +31,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		</pluginManagement>
 	</build>
 
 </project>
