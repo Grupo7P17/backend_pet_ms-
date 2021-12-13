@@ -30,12 +30,15 @@ public class PetController {
         this.petRepository.deleteById(username);
         return "Se eliminó la mascota.";
     }
-    @PutMapping("/pet/update")
-    Pet updatePet(@RequestBody Pet petUdate){
-        Pet pet = this.petRepository.findById(petUdate.getUsername()).orElse(null);
+    @PutMapping("/pet/update/{username}")
+    Pet updatePet(@RequestBody Pet petUpdate){
+        Pet pet = this.petRepository.findById(petUpdate.getUsername()).orElse(null);
         if(pet == null){
             throw new PetNotFoundException("La mascota no está registrada");
         }
+        pet.setName( petUpdate.getName());
+        pet.setBreed(petUpdate.getBreed());
+        pet.setAge(petUpdate.getAge());
         return petRepository.save(pet);
     }
 }

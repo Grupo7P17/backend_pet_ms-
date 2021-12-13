@@ -1,20 +1,18 @@
 package com.pethose.pet_ms.models;
 import org.springframework.data.annotation.Id;
-import java.util.Date;
-
 
 public class Booking {
     @Id
     private String id;
-    private String username;
+    private String usernameBooking;
     private String checkIn;
     private String checkOut;
     private Integer cost;
 
-    public Booking(String id, String username, String checkIn, String checkOut, Integer cost, String id1){
+    public Booking(String id, String usernameBooking, String checkIn, String checkOut, Integer cost){
 
         this.id = id;
-        this.username = username;
+        this.usernameBooking = usernameBooking;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.cost = cost;
@@ -28,12 +26,12 @@ public class Booking {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUsernameBooking() {
+        return usernameBooking;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsernameBooking(String usernameBooking) {
+        this.usernameBooking = usernameBooking;
     }
 
     public String getCheckIn() {
